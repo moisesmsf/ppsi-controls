@@ -15,9 +15,9 @@ mybutton.style.display = "block";
 } else {
 mybutton.style.display = "none";
 }
-}
+} 
 // When the user clicks on the button, scroll to the top of the document
-mybutton.addEventListener("click", backToTop);
+ mybutton.addEventListener("click", backToTop);
 
 function backToTop() {
 document.body.scrollTop = 0;
@@ -28,7 +28,10 @@ var groupColumn = 6;
 const table = $('#controls').DataTable({
     columnDefs: [{ visible: false, targets: groupColumn },{ visible: false, searchable: false, orderable: false, targets: 7 },{ searchable: false, orderable: false, visible: false, targets: 0}],
     paging: false,
-    fixedHeader: true,
+    fixedHeader: {
+        header: false,
+        footer: false
+    },
     responsive: true,
     rowGroup: {
         dataSrc: 6
