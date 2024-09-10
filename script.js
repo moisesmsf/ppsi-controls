@@ -28,6 +28,8 @@ var groupColumn = 6;
 const table = $('#controls').DataTable({
     columnDefs: [{ visible: false, targets: groupColumn },{ visible: false, searchable: false, orderable: false, targets: 7 },{ searchable: false, orderable: false, visible: false, targets: 0}],
     paging: false,
+    scrollCollapse: true,
+    scrollY: '700px',
     fixedHeader: {
         header: false,
         footer: false
@@ -86,10 +88,16 @@ const chart = Highcharts.chart('graphic1', {
     title: {
         text: 'FUNÇÕES NIST'
     },
+    legend: {
+        reversed: true
+    },
     plotOptions: {
         series: {
             allowPointSelect: true,
             cursor: 'pointer',
+            dataLabels: {
+                enabled: true
+            }
         }
     },
     series: [
@@ -114,6 +122,9 @@ const chart2 = Highcharts.chart('graphic2', {
         series: {
             allowPointSelect: true,
             cursor: 'pointer',
+            dataLabels: {
+                enabled: true
+            }
         }
     },
     series: [
